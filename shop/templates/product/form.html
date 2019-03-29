@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+{% block content %}
+<form action="{% url 'product:add' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-header">Добавить продукт</div>
+        <div class="card-body">{{ form.as_p }}</div>
+        <div class="card-footer"><input class="form-control btn btn-info" type="submit" value="Добавить"></div>
+    </div>
+</form>
+{% endblock %}
